@@ -1,5 +1,7 @@
 <?php
 
+use App\User;
+use App\Carrera;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -12,9 +14,9 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-    	$carrera = DB::table('carreras')->select('id')->where('titulo', '=', 'No Aplica')->first();
+    	$carrera = Carrera::where('titulo', '=', 'No Aplica')->first();
 
-        DB::table('users')->insert([
+        User::create([
         	'perfil'	=>	'conductor',
         	'nombre'	=>	'Juan Rodríguez',
         	'email'		=>	'juanr@correo.com',

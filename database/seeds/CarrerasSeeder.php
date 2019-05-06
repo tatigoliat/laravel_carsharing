@@ -1,31 +1,31 @@
 <?php
 
+use App\Carrera;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 class CarrerasSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
-        DB::table('Carreras')->insert([
-        	'titulo' => 'No Aplica'
+        // DB::table('Carreras')->insert([
+        // 	'titulo' => 'No Aplica'
+        // ]);
+
+        Carrera::create([
+			'titulo' => 'No Aplica'
         ]);
 
-        DB::table('Carreras')->insert([
-        	'titulo' => 'Ingeniero Informatica'
-        ]);
+		Carrera::create([
+			'titulo' => 'Ingeniero Informatica'
+		]);
+
+		Carrera::create([
+			'titulo' => 'Ingeniero Electricista'
+		]);
     
-        DB::table('Carreras')->insert([
-        	'titulo' => 'Ingeniero Electricista'
-        ]);
-    
-        DB::table('Carreras')->insert([
-        	'titulo' => 'Ingeniero Mecanico'
-        ]);
+		Carrera::create([
+			'titulo' => 'Ingeniero Mecanico'
+		]);
     }
 }
