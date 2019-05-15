@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
 
         User::create([
         	'perfil'	=>	'conductor',
-        	'nombre'	=>	'Juan Rodríguez',
+        	'name'	=>	'Juan Rodríguez',
         	'email'		=>	'juanr@correo.com',
         	'password'	=>	bcrypt('juan'),
         	'telefono'	=> 	'+34910608247',
