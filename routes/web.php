@@ -12,3 +12,7 @@ Route::get('/usuarios/{id}', 'UserController@show')
 Route::get('/usuarios/nuevo', 'UserController@create');
 
 Route::get('/saludo/name{name}/nick/{nickname}', 'WelcomeUserController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
