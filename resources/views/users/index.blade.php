@@ -8,10 +8,6 @@
           <div class="text-primary">
             <h1>{{ Auth::user()->name }}</h1>
           </div>
-          <div class="pull-left">
-            <p>Esta registrado como <strong>{{ Auth::user()->perfil }}</strong>
-          </div>
-          
           <div class="pull-right">
             <div class="btn-group">
               <a class="btn btn-success pull-right" href="{{ url('/users/edit/'.Auth::user()->id.'') }}" role="button">Editar Perfil</a>
@@ -23,14 +19,14 @@
               <tr>
                   <th class="text-center">Correo</th>
                   <th class="text-center">Telefono</th>
-                  <th class="text-center">Carrera</th>
+                  <th class="text-center">Tipo</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                   <td class="text-center">{{ Auth::user()->email }}</td>
                   <td class="text-center">{{ Auth::user()->telefono }}</td>
-                  <td class="text-center">{{ Auth::user()->carrera_id }}</td>
+                  <td class="text-center">{{ Auth::user()->perfil }}</td>
                   </tr>
             </tbody>
           </table>

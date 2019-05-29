@@ -64,8 +64,13 @@
                             <label for="perfil" class="col-md-4 control-label">Tipo</label>
                             <div class="col-md-6">
                                 <select id="perfil" type="text" class="form-control" name="perfil" required>
-                                    <option value="Conductor">Conductor</option>
-                                    <option value="Pasajero">Pasajero</option>
+                                    <option value="Conductor"> {{$users->perfil}}</option>
+                                    @if (($users->perfil) == "Conductor")
+                                    <option value='Pasajero'>Pasajero</option>
+                                    @endif
+                                    @if ($users->perfil == "Pasajero")
+                                    <option value= 'Conductor'>Conductor</option>
+                                    @endif
                                 </select>
                                 @if ($errors->has('perfil'))
                                     <span class="help-block">
