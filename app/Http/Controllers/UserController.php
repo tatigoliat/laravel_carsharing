@@ -15,10 +15,10 @@ class UserController extends Controller
 
     public function show($id)
 	{
-    	return "Mostrando detalles del Usuario: {$id}";
+    	//return "Mostrando detalles del Usuario: {$id}";
 
         $users=User::find($id);
-        return  view('user.show',compact('users'));
+        return  view('users.show')->with('users',$users);
     }
 
     public function create()
@@ -28,17 +28,16 @@ class UserController extends Controller
 
     public function edit($id)
     {
-        //
-        $user=User::find($id);
-        return view('user.edit',compact('user'));
+        $users=User::find($id);
+        return  view('users.edit')->with('users',$users);
     }
  
     public function update(Request $request, $id)    {
-        //
-        // $this->validate($request,[ 'nombre'=>'required', 'resumen'=>'required', 'npagina'=>'required', 'edicion'=>'required', 'autor'=>'required', 'npagina'=>'required', 'precio'=>'required']);
+        
+        $this->validate($request,[ 'telefono'=>'required', 'perfil'=>'required']);
  
-        // libro::find($id)->update($request->all());
-        // return redirect()->route('libro.index')->with('success','Registro actualizado satisfactoriamente');
+        User::find($id)->update($request->all());
+        return redirect()->route('users.index')->with('success','Registro actualizado satisfactoriamente');
  
     }
 }
