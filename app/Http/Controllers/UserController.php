@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Carrera;
 
 class UserController extends Controller
 {
@@ -29,7 +30,10 @@ class UserController extends Controller
     public function edit($id)
     {
         $users=User::find($id);
-        return  view('users.edit')->with('users',$users);
+        //$carreras=Carrera::lists('id', 'titulo');
+
+        return view('users.edit')->with('users',$users);
+        
     }
  
     public function update(Request $request, $id)    {
