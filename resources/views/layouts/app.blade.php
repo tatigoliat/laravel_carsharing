@@ -54,6 +54,12 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
+                                        <a href="{{ url('/users') }}">
+                                            Ver Perfil
+                                        </a>
+                                        <a href="{{ url('/users/edit/'.Auth::user()->id.'') }}">
+                                            Editar Perfil
+                                        </a>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

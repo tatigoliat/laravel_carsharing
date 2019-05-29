@@ -4,7 +4,7 @@
 	<div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
 			<div class="panel-heading">
-				<h1 class="panel-title">Editando Registro</h1>
+				<h1 class="panel-title">Editando Perfil</h1>
 				<h2 class="panel-title">{{$users->email}}</h2>
 			</div>
 			<div class="panel-body">
