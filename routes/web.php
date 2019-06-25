@@ -9,6 +9,11 @@ Route::resource('users', 'UserController');
 Route::get('/users/edit/{id}','UserController@edit');
 Route::post('/users/edit/{id}','UserController@update');
 
+
+Route::resource('automoviles', 'AutomovilController');
+Route::get('/automoviles/miauto/{id}','AutomovilController@miauto');
+
+
 //Route::get('/usuarios', 'UserController@index'); 
 //Route::get('/users/{id}', 'UserController@show')->where('id', '[0-9]+');
 

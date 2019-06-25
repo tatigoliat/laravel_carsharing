@@ -51,6 +51,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
+                               
 
                                 <ul class="dropdown-menu">
                                     <li>
@@ -60,6 +61,19 @@
                                         <a href="{{ url('/users/edit/'.Auth::user()->id.'') }}">
                                             Editar Perfil
                                         </a>
+                                        @if (Auth::user()->perfil == "Pasajero")
+                                            <a href="{{ url('/users') }}">
+                                                Pedir Autos
+                                            </a>
+                                        @endif
+                                        @if (Auth::user()->perfil == "Conductor")
+                                            <a href="{{ url('/automoviles/miauto/'.Auth::user()->id.'') }}">
+                                                Mi auto
+                                            </a>
+                                            <a href="{{ url('/users') }}">
+                                                Pedidos
+                                            </a>
+                                        @endif
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

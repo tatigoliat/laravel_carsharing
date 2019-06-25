@@ -27,6 +27,10 @@
                   <td class="text-center">{{ Auth::user()->email }}</td>
                   <td class="text-center">{{ Auth::user()->telefono }}</td>
                   <td class="text-center">{{ Auth::user()->perfil }}</td>
+
+                  <? 
+                  
+                   ?>
                   </tr>
             </tbody>
           </table>
