@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Has inciado Sessión!asss
+                    Has inciado Sessión!
                 </div>
             </div>
         </div>

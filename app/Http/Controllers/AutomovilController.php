@@ -24,13 +24,30 @@ class AutomovilController extends Controller
     	return view('automoviles.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-    	$this->validate($request,[ 'placa'=>'required', 'modelo'=>'required', 'plazas'=>'required']);
-
-        Automovil::create($request->all());
-        return redirect()->route('automoviles.automoviles')->with('success','Registro creado satisfactoriamente');
+    	$this->validate($request,['placa'=>'required', 'modelo'=>'required', 'plazas'=>'required']);
+        Automovil::create([
+            'user_id'   =>  $request['user_id'],
+            'placa'     =>  $request['placa'],
+            'modelo'    =>  $request['modelo'],
+            'plazas'    =>  $request['plazas'],
+        ]);
+        return redirect()->route('/automoviles/miauto', $request['user_id'])->with('success','Registro creado satisfactoriamente');
     }
 
+    public function edit($id){
+        $automoviles=Automovil::find($id);
+        return view('automoviles.edit')->with('automoviles',$automoviles);
+    }
+
+   public function update(Request $request, $id){
+        $user_id =  $request['user_id'];
+        $this->validate($request,['placa'=>'required', 'modelo'=>'required', 'plazas'=>'required']);
+
+        Automovil::find($id)->update($request->all());
+        $user_id = Automovil::find($id);
+        return redirect()->route('/automoviles/miauto', $user_id->user_id)->with('success','Registro creado satisfactoriamente');
+    }
     
 }

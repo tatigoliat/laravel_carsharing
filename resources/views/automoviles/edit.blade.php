@@ -5,18 +5,20 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading"></strong>Registra tu Auto: </div>
+                <div class="panel-heading"></strong>Edita tu Auto: </div>
+
 
                     <div class="panel-body">
-                        <form method="POST" action="{{ route('automoviles.store') }}"  role="form">
+                        <form class="form-horizontal" method="POST" action="{{ route('automoviles.update', $automoviles->id) }}"  role="form">
                             {{ csrf_field() }}
-                            <input id="user_id" type="hidden"  class="form-control" name="user_id" value="{{ Auth::user()->id}}">
+                            
+                            <input name="_method" type="hidden" value="PATCH">
 
                             <div class="form-group{{ $errors->has('modelo') ? ' has-error' : '' }}">
                                 <label for="modelo" class="col-md-4 control-label">Modelo </label>
 
                                 <div class="col-md-6">
-                                    <input id="modelo" type="text" class="form-control" name="modelo" value="{{ old('modelo') }}" required autofocus>
+                                    <input id="modelo" type="text" class="form-control" name="modelo" value="{{ $automoviles->modelo }}" required autofocus>
 
                                     @if ($errors->has('modelo'))
                                         <span class="help-block">
@@ -30,7 +32,7 @@
                                 <label for="placa" class="col-md-4 control-label">Placa</label>
     
                                 <div class="col-md-6">
-                                    <input id="placa" type="text" class="form-control" name="placa" value="{{ old('placa') }}" required>
+                                    <input id="placa" type="text" class="form-control" name="placa" value="{{ $automoviles->placa }}" required>
     
                                     @if ($errors->has('placa'))
                                         <span class="help-block">
@@ -44,7 +46,7 @@
                                 <label for="plazas" class="col-md-4 control-label">Plazas Disponibles</label>
     
                                 <div class="col-md-6">
-                                    <input id="plazas" type="text" class="form-control" name="plazas" value="{{ old('plazas') }}" required onkeypress= "return soloNumeros(event);">
+                                    <input id="plazas" type="text" class="form-control" name="plazas" value="{{ $automoviles->plazas }}"   required onkeypress= "return soloNumeros(event);">
     
                                     @if ($errors->has('plazas'))
                                         <span class="help-block">
@@ -54,11 +56,11 @@
                                 </div>
                             </div>
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                   Register
+                                <button type="submit" value="Actualizar" class="btn btn-success">
+                                   Actualizar
                                 </button>
                                 <a href="{{ url('/automoviles/miauto/'.Auth::user()->id.'') }}" class="btn btn-info btn-primary" >Atrás</a>
-                            </div>  
+                            </div> 
                             </div>
                         </div>
                     </form>

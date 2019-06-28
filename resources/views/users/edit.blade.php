@@ -36,7 +36,7 @@
                             <label for="name" class="col-md-4 control-label">Nombre</label>
 
                             <div class="col-md-6">
-                               <input type="text" name="email" id="name" class="form-control input-sm" placeholder="name" value="{{$users->name}}">
+                               <input type="text" name="name" id="name" class="form-control input-sm" placeholder="name" value="{{$users->name}}">
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
