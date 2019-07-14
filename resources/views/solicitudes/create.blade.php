@@ -70,10 +70,13 @@
 <script>
     $(document).ready(function(){
         $("#destino").change(function(){
-            var rand_distancia = Math.floor((91-4)*Math.random()) + 1;
-            var rand_tiempo_viaje = rand_distancia * 7;
-            $("#distancia").val(rand_distancia+' km');
-            $("#tiempo_viaje").val(rand_tiempo_viaje+' min');
+            var rand_distancia = Math.floor((99-9)*Math.random()) + 1;
+            var rand_tiempo_viaje = (rand_distancia) / 60;
+            var flotante = parseFloat(rand_tiempo_viaje);
+            
+            var resultado = Math.round(flotante*100)/100;
+            $("#distancia").val(rand_distancia+' km a 60 Kms/hora (Referencial)');
+            $("#tiempo_viaje").val(resultado+' H');
         });
 
 

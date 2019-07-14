@@ -23,7 +23,7 @@ class CreateSolicitudesTable extends Migration
             $table->string('distancia')->nullable();
             $table->string('tiempo_viaje')->nullable();
             $table->string('tiempo_recogida')->nullable();
-            $table->string('procesada')->nullable();
+            $table->string('estatus')->nullable(); //Cancelada por el Pasajero, Cancelada por el Conductor
             $table->timestamps();
         });
     }

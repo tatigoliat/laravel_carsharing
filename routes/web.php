@@ -8,6 +8,7 @@ Auth::routes();
 Route::resource('users', 'UserController');
 Route::get('/users/edit/{id}','UserController@edit');
 Route::post('/users/edit/{id}','UserController@update');
+Route::get('/users/ver/{id}','UserController@ver');
 
 Route::resource('automoviles', 'AutomovilController');
 Route::get('/automoviles/create','AutomovilController@create');
@@ -21,6 +22,10 @@ Route::get('/solicitudes/create/{id}','SolicitarController@create');
 Route::get('/solicitudes/tomarviaje/{id}','SolicitarController@tomarviaje');
 Route::get('/solicitudes/pedidos','SolicitarController@pedidos');
 Route::get('/solicitudes/datospasajero/{id}','SolicitarController@datospasajero')->name('/solicitudes/datospasajero');
+Route::get('/solicitudes/cancelarsolicitud/{id}','SolicitarController@cancelarsolicitud');
+Route::get('/solicitudes/completarviaje/{id}','SolicitarController@completarviaje')->name('/solicitudes/completarviaje');
+Route::get('/solicitudes/cancelarviaje/{id}','SolicitarController@cancelarviaje')->name('/solicitudes/cancelarviaje');
+
 
 
 Route::get('/saludo/name{name}/nick/{nickname}', 'WelcomeUserController');

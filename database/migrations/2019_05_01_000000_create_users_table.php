@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('email', 30)->unique();
             $table->string('password');
             $table->string('telefono')->nullable();
+            $table->string('pasajero_id')->default(0);
             // $table->string('modelo')->nullable();
             // $table->string('placa')->nullable();
             // $table->string('plazas')->nullable();

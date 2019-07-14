@@ -74,6 +74,7 @@
                                             <a href="{{ url('/solicitudes') }}">
                                                 Pedidos
                                             </a>
+                                            
                                         @endif
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

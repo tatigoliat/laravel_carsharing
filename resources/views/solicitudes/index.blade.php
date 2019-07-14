@@ -12,9 +12,12 @@
 					</div>
             		@if($solicitudes->isEmpty())
             		<div>
-            			<h4>No hay registros</h4>
+            			<h4>No hay Solicitudes de Viajes.</h4>
             		</div>
 
+            		<div class="btn-group">
+		              <a class="btn btn-success pull-right" href="{{ url('/solicitudes/datospasajero/'.Auth::user()->pasajero_id.'') }}" role="button">Pasajero Mas reciente</a>
+		            </div>
             		@endif
 
             		@if(!($solicitudes->isEmpty()))

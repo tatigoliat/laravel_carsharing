@@ -8,9 +8,8 @@
 					<div class="text-primary">
 						<h1>{{ Auth::user()->name }}</h1>
 						<h2>Datos de mi Pasajero</h2>
-
 					</div>
-            		@if($solicitudes->isEmpty())
+            		@if($valor == 1)
             		<div>
             			<h4>No tiene solicitudes hechas</h4>
             		</div>
@@ -21,6 +20,7 @@
             		</div>
             		@endif
 
+            		@if($valor != 1)
             		@if(!($solicitudes->isEmpty()))
 					<table class="table table-bordered" id="MyTable">
 					<thead>
@@ -29,19 +29,35 @@
 							<th class="text-center">Movil</th>
 							<th class="text-center">Destino</th>
 							<th class="text-center">Tiempo de Recogida</th>
+							<th class="text-center">Estatus</th>
 					  	</tr>
 					</thead>
 					<tbody>
-						<tr>
+						
 					   		@foreach($solicitudes as $solicitud)
+					   		<tr>
 								<td class="text-center">{{$nombre_pasajero}}</td>
 					   			<td class="text-center">{{$movil_pasajero}}</td>
 								<td class="text-center">{{$solicitud->distancia}}</td>
 								<td class="text-center">{{$solicitud->tiempo_viaje}}</td>
+								<td class="text-center">
+								@if ($solicitud->estatus == '4')
+								Viaje Completado
+								@endif
+								@if ($solicitud->estatus == '3')
+								<a href="{{ url('/solicitudes/completarviaje/'.$solicitud->id.'') }}">Completar Viaje
+										<a href="{{ url('/solicitudes/cancelarviaje/'.$solicitud->id.'') }}">Cancelar Viaje
+								@endif
+								@if ($solicitud->estatus == '2')
+								Viaje Cancelado
+								@endif
+								</td>
+							</tr>
 					   		@endforeach
-					   	</tr>
+					   	
 					</tbody>
           			</table> 
+          		@endif
             @endif
         </div>
       </div>

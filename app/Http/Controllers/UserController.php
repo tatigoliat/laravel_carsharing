@@ -17,10 +17,15 @@ class UserController extends Controller
 
     public function show($id)
 	{
-    	//return "Mostrando detalles del Usuario: {$id}";
-
         $users=User::find($id);
         return  view('users.show')->with('users',$users);
+    }
+
+    public function ver($id)
+    {
+
+        $users=User::find($id)->get();
+        return view('users.ver')->with('users',$users);
     }
 
     public function create()
