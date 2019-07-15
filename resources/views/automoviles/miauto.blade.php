@@ -12,7 +12,7 @@
             @if($automoviles->isEmpty())
             <div class="pull-right">
                 <div class="btn-group">
-                    <a class="btn btn-success pull-right" href="{{ url('/automoviles/create/') }}" role="button">Agregar Auto</a>
+                    <a class="btn btn-success pull-right" href="{{ url('/automoviles/create/') }}" role="button">Agregar Coche</a>
                 </div>
             </div>
             @endif

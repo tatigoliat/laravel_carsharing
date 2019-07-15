@@ -61,6 +61,24 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('perfil') ? ' has-error' : '' }}">
+                            <label for="carrera_id" class="col-md-4 control-label">Carrera</label>
+                            <div class="col-md-6">
+                                <select id="carrera_id" type="text" class="form-control" name="carrera_id" required>
+                                    @foreach ($carreras as $carrera)
+                                    <option value="{{$carrera->id}}">{{$carrera->titulo}}
+                                        </option>
+                                    @endforeach
+                                 </select>
+
+                                @if ($errors->has('carrera_id'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('carrera_id') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('perfil') ? ' has-error' : '' }}">
                             <label for="perfil" class="col-md-4 control-label">Tipo</label>
                             <div class="col-md-6">
                                 <select id="perfil" type="text" class="form-control" name="perfil" required>

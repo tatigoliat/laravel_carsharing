@@ -17,13 +17,11 @@ class UserSeeder extends Seeder
     	$carrera = Carrera::where('titulo', '=', 'No Aplica')->first();
 
         User::create([
-        	'perfil'	=>	'conductor',
-        	'name'	=>	'Juan Rodríguez',
-        	'email'		=>	'juanr@correo.com',
-        	'password'	=>	bcrypt('juan'),
-        	'telefono'	=> 	'+34910608247',
-        	'carrera_id'=>	$carrera->id,
-
+        	'perfil'	=>	'pasajero',
+        	'name'	=>	'Usuario Prueba',
+        	'email'		=>	'correo@gmail.com',
+        	'password'	=>	bcrypt('qwerty123'),
+        	'telefono'	=> 	'1234327998 ',        	
         ]);
     }
 }

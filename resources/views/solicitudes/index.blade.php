@@ -27,7 +27,7 @@
 							<th class="text-center">Destino <i class="fas fa-globe-europe"></i></th>
 							<th class="text-center">Distancia de Viaje  <i class="fa fa-car"></i></th>
 							<th class="text-center">Tiempo de Viaje</th>
-							<th class="text-center">Conductor</th>
+							<th class="text-center">Acciones</th>
 					  	</tr>
 					</thead>
 					<tbody>

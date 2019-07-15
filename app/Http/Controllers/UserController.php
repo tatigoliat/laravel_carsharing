@@ -36,7 +36,10 @@ class UserController extends Controller
     public function edit($id)
     {
         $users=User::find($id);
-        return view('users.edit')->with('users',$users);
+        $carreras=Carrera::all();
+        return view('users.edit')
+        ->with('users',$users)
+        ->with('carreras',$carreras);
         
     }
  

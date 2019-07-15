@@ -16,7 +16,7 @@
             		</div>
             		<div class="pull-right">
             		    <div class="btn-group">
-            		        <a class="btn btn-success pull-right" href="{{ url('/solicitudes/create/'.Auth::user()->id.'') }}" role="button">Solicitar un Auto</a>
+            		        <a class="btn btn-success pull-right" href="{{ url('/solicitudes/create/'.Auth::user()->id.'') }}" role="button">Solicitar un Coche</a>
             		    </div>
             		</div>
             		@endif
@@ -25,7 +25,7 @@
             			@if( $tengoviaje == 2)
             			<div class="pull-right">
             		    <div class="btn-group">
-            		        <a class="btn btn-success pull-right" href="{{ url('/solicitudes/create/'.Auth::user()->id.'') }}" role="button">Solicitar un Auto</a>
+            		        <a class="btn btn-success pull-right" href="{{ url('/solicitudes/create/'.Auth::user()->id.'') }}" role="button">Solicitar un Coche</a>
             		    </div>
             			</div>
             			@elseif( $tengoviaje == 2)

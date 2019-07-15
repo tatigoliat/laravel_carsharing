@@ -64,12 +64,12 @@
                                         </a>
                                         @if (Auth::user()->perfil == "Pasajero")
                                             <a href="{{ url('/solicitudes/missolicitudes/'.Auth::user()->id.'') }}">
-                                                Pedir Autos
+                                                Pedir un Coche
                                             </a>
                                         @endif
                                         @if (Auth::user()->perfil == "Conductor")
                                             <a href="{{ url('/automoviles/miauto/'.Auth::user()->id.'') }}">
-                                                Mi auto
+                                                Mi Coche
                                             </a>
                                             <a href="{{ url('/solicitudes') }}">
                                                 Pedidos

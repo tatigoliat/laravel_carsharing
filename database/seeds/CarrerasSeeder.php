@@ -12,20 +12,28 @@ class CarrerasSeeder extends Seeder
         // 	'titulo' => 'No Aplica'
         // ]);
 
-        Carrera::create([
-			'titulo' => 'No Aplica'
-        ]);
-
 		Carrera::create([
-			'titulo' => 'Ingeniero Informatica'
+			'titulo' => 'Informatica'
 		]);
 
 		Carrera::create([
-			'titulo' => 'Ingeniero Electricista'
+			'titulo' => 'ADE'
 		]);
     
 		Carrera::create([
-			'titulo' => 'Ingeniero Mecanico'
+			'titulo' => 'Derecho'
+		]);
+		
+		Carrera::create([
+			'titulo' => 'Magisterio'
+		]);
+
+		Carrera::create([
+			'titulo' => 'Periodismo'
+		]);
+
+		Carrera::create([
+			'titulo' => 'Marketing'
 		]);
     }
 }
